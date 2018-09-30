@@ -1,0 +1,14 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - fantas-taco</title>
+        {% else %}
+        <title>Life is fantas-taco!</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>fantas-taco: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
