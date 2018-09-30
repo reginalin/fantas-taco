@@ -1,0 +1,1 @@
+FLASK_APP=fantas-taco.py
