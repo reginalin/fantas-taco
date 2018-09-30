@@ -5,7 +5,9 @@
     <body>
     	<div>
     		<p>Should I get some tacos?</p>
-    		<button type="button" name="randomButton">Tell me!</button>
+    		<form action="" method="post" novalidate>
+    			<p>{{ form.submit() }}</p>
+    		</form>
     	</div>
     </body>
 {% endblock %}
