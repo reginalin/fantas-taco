@@ -12,5 +12,7 @@ Uses:
 * Jinja2 templating
 * Twitter Bootstrap
 
+to run: flask run from top-level directory
+
 built loosely following Flask Mega-Tutorial by Miguel Grinberg
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
