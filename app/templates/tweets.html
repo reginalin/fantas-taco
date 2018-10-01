@@ -5,7 +5,9 @@
     <body>
     	<div>
             <p>featuring live taco tweets worldwide</p>
-
+            {% for tweet in taco_tweets %}
+                <p>{{ tweet }}</p>
+            {% endfor %}
     	</div>
     </body>
 {% endblock %}

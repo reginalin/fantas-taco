@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
 from app.forms import RandomForm
-from app import decide
+from app import decide, taco_tweets
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -13,4 +13,5 @@ def index():
 
 @app.route('/tweets')
 def tweets():
-	return render_template('tweets.html', title='Taco Tweets')
+	tweet_stream = taco_tweets.get_tweets()
+	return render_template('tweets.html', title='Taco Tweets', taco_tweets=tweet_stream)
