@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import RandomForm
+from app.forms import RandomForm, GifForm
 from app import decide, taco_tweets, taco_gif
 
 @app.route('/', methods=['GET', 'POST'])
@@ -18,5 +18,7 @@ def tweets():
 
 @app.route('/gif')
 def gif():
+	form = GifForm()
 	url = taco_gif.get_gif_url('taco')
-	return render_template('gif.html', title='Taco Gif', url=url)
+	return render_template('gif.html', title='Taco Gif', url=url, form=form)
+	

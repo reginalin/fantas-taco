@@ -7,8 +7,8 @@
     		<p>Should I get some tacos?</p>
 
     		<form action="" method="post" novalidate>
-    		{{ form.hidden_tag() }}
-    			<p>{{ form.submit() }}</p>
+                {{ form.hidden_tag() }}
+                <p>{{ form.submit() }}</p>
     		</form>
 
     		{% with choices = get_flashed_messages(with_categories=true) %}
