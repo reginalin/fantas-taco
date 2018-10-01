@@ -1,23 +1,32 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
     <h1>life is fantas-taco!</h1>
     <body>
-    	<div>
-    		<p>Should I get some tacos?</p>
+    	<div class="row">
+            <div class="col-md-4">
+                <p>Should I get some tacos?</p>
+                
+                <br>
 
-    		<form action="" method="post" novalidate>
-                {{ form.hidden_tag() }}
-                <p>{{ form.submit() }}</p>
-    		</form>
+                <div class="row">
+                    <div class="col-md-4">
+                        {{ wtf.quick_form(form) }}
+                    </div>
+                </div>
 
-    		{% with choices = get_flashed_messages(with_categories=true) %}
-            {% if choices %}
-                {% for choice in choices %}
-                    <p>{{ choice[1] }}</p>
-                {% endfor %}
-            {% endif %}
-        	{% endwith %}
+                <br>
+
+        		{% with choices = get_flashed_messages(with_categories=true) %}
+                {% if choices %}
+                    {% for choice in choices %}
+                        <p>{{ choice[1] }}</p>
+                    {% endfor %}
+                {% endif %}
+            	{% endwith %}
+            </div>
+
     	</div>
     </body>
 {% endblock %}

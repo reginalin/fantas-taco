@@ -1,18 +1,29 @@
-<html>
-    <head>
-        {% if title %}
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}
         <title>{{ title }} - fantas-taco</title>
         {% else %}
         <title>Life is fantas-taco!</title>
-        {% endif %}
-    </head>
-    <body>
-        <div>fantas-taco: 
-          <a href="{{ url_for('index') }}">Home</a> /
-          <a href="{{ url_for('tweets') }}">Taco Tweets</a> /
-          <a href="{{ url_for('gif') }}">Taco Gif</a>
-        </div>
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
-</html>
+    {% endif %}
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">  </a>
+    <ul class="nav navbar-nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tweets') }}">Taco Tweets</a></li>
+        <li><a href="{{ url_for('gif') }}">Taco Gif</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        {% block app_content %}{% endblock %}
+    </div>
+
+{% endblock %}
