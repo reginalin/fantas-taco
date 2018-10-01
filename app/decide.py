@@ -11,5 +11,7 @@ decisions = [
 			]
 
 def random_decision():
-	return decisions[random.randint(0, len(decisions) - 1)]
-	
+	return decisions[random_index()]
+
+def random_index():
+	return random.randint(0, len(decisions) - 1)
