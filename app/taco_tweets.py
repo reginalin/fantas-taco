@@ -1,10 +1,11 @@
 import twitter
 import json
+from app import app
 
-api = twitter.Api(consumer_key='ho8YnsAGgccWm2MdOD7Yx2cOg',
-              consumer_secret='SpftyunyWxnIG3ytUKo4oqLBI58Ujh2xH3SCveuS33yH0uMvjG',
-              access_token_key='704797540701622273-f28XWEU3c9NTiTXo3eGedXzAh51XcWq',
-              access_token_secret='FCENIOPG2fmUZijLbUH1RoMXYx6e8AreHWj8bDkNn2aEF')
+api = twitter.Api(consumer_key=app.config['CONSUMER_KEY'],
+              consumer_secret=app.config['CONSUMER_SECRET'],
+              access_token_key=app.config['ACCESS_TOKEN_KEY'],
+              access_token_secret=app.config['ACCESS_TOKEN_SECRET'])
 
 def get_tweets():
 	stream = tweet_stream()

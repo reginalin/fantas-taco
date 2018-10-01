@@ -7,7 +7,7 @@ from app import decide, taco_tweets, taco_gif
 def index():
 	form = RandomForm()
 	if form.validate_on_submit():
-		flash(decide.randomDecision())
+		flash(decide.random_decision())
 		return redirect(url_for('index'))
 	return render_template('index.html', title='Home', form=form)
 
