@@ -4,4 +4,4 @@ from wtforms.validators import DataRequired
 
 #really just a button
 class RandomForm(FlaskForm):
-    submit = SubmitField('Decide')
+    submit = SubmitField('click to decide')
