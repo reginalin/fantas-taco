@@ -15,3 +15,7 @@ def index():
 def tweets():
 	tweet_stream = taco_tweets.get_tweets()
 	return render_template('tweets.html', title='Taco Tweets', taco_tweets=tweet_stream)
+
+@app.route('/gif')
+def gif():
+	return render_template('gif.html', title='Taco Gif')
