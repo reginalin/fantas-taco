@@ -7,7 +7,10 @@
         {% endif %}
     </head>
     <body>
-        <div>fantas-taco: <a href="/index">Home</a></div>
+        <div>fantas-taco: 
+          <a href="{{ url_for('index') }}">Home</a> /
+          <a href="{{ url_for('tweets') }}">Taco Tweets</a>
+        </div>
         <hr>
         {% block content %}{% endblock %}
     </body>

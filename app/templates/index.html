@@ -5,9 +5,19 @@
     <body>
     	<div>
     		<p>Should I get some tacos?</p>
+
     		<form action="" method="post" novalidate>
+    		{{ form.hidden_tag() }}
     			<p>{{ form.submit() }}</p>
     		</form>
+
+    		{% with choices = get_flashed_messages(with_categories=true) %}
+            {% if choices %}
+                {% for choice in choices %}
+                    <p>{{ choice[1] }}</p>
+                {% endfor %}
+            {% endif %}
+        	{% endwith %}
     	</div>
     </body>
 {% endblock %}
